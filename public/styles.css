@@ -1,15 +1,31 @@
+
 body {
-  font-size: 120%;
+  font-size: 110%;
   font-family: Arial;
+  font-style: italic;
 }
 
-button, input {
+button {
   font-size: 100%;
   font-family: Arial;
+  border-radius: 4px;
+  background-image: linear-gradient(lightblue, navy);
+  color: white;
+
+}
+
+input {
+  font-size: 100%;
+  font-family: Arial;
+  border-radius: 4px;
+  background-color: transparent;
+  color: lightgray;
 }
 
 table {
   width: 100%;
+  border: 10px;
+  border-color: gray;
 }
 
 td, th {
@@ -33,8 +49,11 @@ tr:nth-child(even) {
 }
 
 .total {
-  font-size: 150%;
+  font-size: 130%;
   text-decoration: underline;
+  background-image: linear-gradient(lightblue, navy);
+  color: white;
+  padding: 5px;
 }
 
 .form {
