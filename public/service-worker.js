@@ -1,4 +1,4 @@
-const { response } = require("express");
+console.log("Hello from service worker!");
 
 const FILES_TO_CACHE = [
   "/",
@@ -7,8 +7,9 @@ const FILES_TO_CACHE = [
   "/index.js",
   "/styles.css",
   "/manifest.webmanifest",
-  "/public/icons/icon-192x192",
-  "/public/icons/icon-512x512",
+  "/favicon.ico",
+  "/icons/icon-192x192.png",
+  "/icons/icon-512x512.png",
 ];
 
 const CACHE_NAME = "static-cache-v1",
@@ -17,7 +18,7 @@ const CACHE_NAME = "static-cache-v1",
 //Service Worker -- Installation
 self.addEventListener("install", (e) => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
+    caches.open(CACHE_NAME).then(cache => {
       console.log("FILES WERE SUCCESSFULLY PRE-CACHED");
       return cache.addAll(FILES_TO_CACHE);
     })
