@@ -2,12 +2,11 @@ console.log("Hello from service worker!");
 
 const FILES_TO_CACHE = [
   "/",
-  "db.js",
+  "/db.js",
   "/index.html",
   "/index.js",
   "/styles.css",
   "/manifest.webmanifest",
-  "/favicon.ico",
   "/icons/icon-192x192.png",
   "/icons/icon-512x512.png",
 ];
@@ -18,12 +17,16 @@ const CACHE_NAME = "static-cache-v1",
 //Service Worker -- Installation
 self.addEventListener("install", (e) => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      console.log("FILES WERE SUCCESSFULLY PRE-CACHED");
-      return cache.addAll(FILES_TO_CACHE);
-    })
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => {
+        return cache.addAll(FILES_TO_CACHE);
+      })
+      .then(() => {
+        console.log("FILES WERE SUCCESSFULLY PRE-CACHED");
+        self.skipWaiting();
+      })
   );
-  self.skipWaiting();
 });
 
 //Service Worker -- Activation
