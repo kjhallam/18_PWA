@@ -57,8 +57,14 @@ N/A
 ---
 
 ## 📷 SCREENSHOTS
-
 ![Screenshot](./public/images/screenshot-BT.jpg)
+
+---
+
+## 🎥 DEMO
+
+![DEMO](./public/images/demo.gif)
+
 ---
 
 ## ❔ QUESTIONS
